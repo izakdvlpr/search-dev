@@ -11,48 +11,51 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 40px;
+  font-size: 3.6em;
   color: var(--primary);
   
-  > strong {
+  margin-bottom: 30px;
+  
+  > span {
     color: var(--secondary);
   }
 `;
 
-export const Form = styled.form`
-  width: 100%;
-  max-width: 300px;
-  
+export const Form = styled.form`  
   display: flex;
   flex-direction: column;  
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Input = styled.input`  
-  height: 45px;  
-  margin-top: 25px;
+  height: 20px;
+  width: 300px;
   
-  border: 1px solid var(--input);
+  margin-bottom: 20px;
+  padding: 20px;  
+    
   border-radius: 10px;
   
-  color: var(--white);
-  text-align: left;
-  padding-left: 15px;
+  color: var(--white);  
     
-  background-color: var(--input);
-    
+  background-color: var(--input);    
 `;
 
-export const Button = styled.button`
-  height: 45px;
-  margin-top: 20px;
+export const Button = styled.input`
+  height: 60px;
+  width: 340px;
   
-  border: 1px solid var(--primary);
+  text-align: center;
+  padding: 20px;  
+  
   border-radius: 10px;
-  
+      
+  font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  
-  background-color: var(--primary);
+    
+  background-color: var(--primary);    
   
   &:hover {
     opacity: 0.9;

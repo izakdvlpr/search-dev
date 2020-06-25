@@ -9,13 +9,16 @@ module.exports = composePlugins(
       bundleAnalyzer,
       {
         enabled: !!process.env.ANALYZE,
-      },
-    ],
+      }
+    ]
   ],
   {
-    distDir: '__next',
-    devIndicators: {
+    distDir: '__next',  
+    devIndicators: {    
       autoPrerender: false,
     },
-  },
+    experimental: {
+      jsconfigPaths: true,
+    }
+  }
 );

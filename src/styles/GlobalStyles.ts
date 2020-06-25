@@ -4,11 +4,12 @@ export default createGlobalStyle`
   * {
     padding: 0;
     margin: 0;
+    -webkit-font-smoothing: antialiased;
   }
   
   html, body #root {
     height: 100%;
-    background-color: var(--black);
+    background-color: #0b0a0a;
     color: var(--white);
   }
   
@@ -19,9 +20,15 @@ export default createGlobalStyle`
     font-family: 'Roboto', sans-serif;
   }
   
+  a {
+    text-decoration: none;
+    color: var(--white);
+  }
+  
   :root {
-    --primary: #a60000;
-    --secondary: #babbb8;
+    --primary: #00c2ff;
+    --secondary: #bbbaba;
+    --tertiary: #3d3d3b;
     
     --input: #30302e;
     
