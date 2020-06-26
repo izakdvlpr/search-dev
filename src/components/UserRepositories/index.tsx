@@ -2,7 +2,9 @@ import React, { memo } from 'react';
  
 import { Repository, Stars, Information, ArrowIcon } from './styles';
 
-const UserRepositories: React.FC = () => {
+import IUserRepositories from '@interfaces/UserRepositories';
+
+const UserRepositories: React.FC<IUserRepositories> = (data: IUserRepositories) => {
   return (
     <Repository>
       <Stars>

@@ -11,7 +11,9 @@ import {
   Followers
 } from './styles';
 
-const UserInfo: React.FC = () => {
+import IUserInfo from '@interfaces/UserInfo';
+
+const UserInfo = () => {    
   return (
     <Container>
       <Avatar src="https://avatars2.githubusercontent.com/u/44278486?v=4" alt="Avatar"/>

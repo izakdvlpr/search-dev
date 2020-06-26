@@ -1,4 +1,4 @@
-export default interface User {
+export default interface IUserInfo {
   login: string,
   id: number,
   node_id: string,

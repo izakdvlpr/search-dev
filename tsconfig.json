@@ -19,7 +19,11 @@
     "target": "esnext",
     "baseUrl": "./src",
     "paths": {
-      "@layout": ["layout"]
+      "@components/*": ["components/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@layout": ["layout"],
+      "@services/*": ["services/*"],
+      "@styles/*": ["styles/pages/*"]
     }
   },
   "exclude": [
