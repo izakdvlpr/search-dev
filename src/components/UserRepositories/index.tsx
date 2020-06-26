@@ -4,20 +4,18 @@ import { Repository, Stars, Information, ArrowIcon } from './styles';
 
 import IUserRepositories from '@interfaces/UserRepositories';
 
-const UserRepositories: React.FC<IUserRepositories> = (data: IUserRepositories) => {
-  return (
-    <Repository>
-      <Stars>
-        <strong>19</strong>
-        <p>stars</p>
-      </Stars>
-      <Information>
-        <h2>coronApp</h2>
-        <p>App feito em React Native (Expo) para obter informações sobre o coronavírus.</p>
-      </Information>
-      <a href="https://github.com/zevdvlpr/coronApp" target="_blank" rel="noopener noreferrer"><ArrowIcon /></a>
-    </Repository>
-  )
-}
+const UserRepositories: React.FC<IUserRepositories> = ({ stargazers_count, name, description, html_url }) => (
+  <Repository>
+    <Stars>
+      <strong>{Number(stargazers_count).toLocaleString()}</strong>
+      <p>stars</p>
+    </Stars>
+    <Information>
+    <h2>{name}</h2>
+    <p>{description}</p>
+    </Information>
+    <a href={html_url} target="_blank" rel="noopener noreferrer"><ArrowIcon /></a>
+  </Repository>
+)
 
 export default memo(UserRepositories);

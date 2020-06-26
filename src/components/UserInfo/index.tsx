@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
  
 import {
   Container,
@@ -13,23 +13,21 @@ import {
 
 import IUserInfo from '@interfaces/UserInfo';
 
-const UserInfo = () => {    
-  return (
-    <Container>
-      <Avatar src="https://avatars2.githubusercontent.com/u/44278486?v=4" alt="Avatar"/>
-      <Login>Zev</Login>
-      <Name>@zevdvlpr</Name>
-      <Bio>Programador Full Stack | Apaixonado por Javascript, Tecnologia e Pizza | 17y</Bio>
-      <Statistics>
-        <Following>          
-          <p><strong>0</strong> seguindo</p>
-        </Following>
-        <Followers>          
-          <p><strong>0</strong> seguidores</p>
-        </Followers>
-      </Statistics>
-    </Container>
-  )
-}
+const UserInfo: React.FC<IUserInfo> = ({ avatar_url, name, login, bio, following, followers }) => (
+  <Container>
+    <Avatar src={avatar_url} alt="Avatar"/>
+    <Name>{name}</Name>
+    <Login>@{login}</Login>
+    <Bio>{bio}</Bio>
+    <Statistics>
+      <Following>          
+        <p><strong>{Number(following).toLocaleString()}</strong> seguindo</p>
+      </Following>
+      <Followers>          
+        <p><strong>{Number(followers).toLocaleString()}</strong> seguidores</p>
+      </Followers>
+    </Statistics>
+  </Container>
+);
 
-export default UserInfo;
+export default memo(UserInfo);

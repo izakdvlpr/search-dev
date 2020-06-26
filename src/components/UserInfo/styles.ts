@@ -19,13 +19,13 @@ export const Avatar = styled.img`
   border-radius: 2em;    
 `;
 
-export const Login = styled.h1`
+export const Name = styled.h1`
   margin-top: 10px;
   
   color: var(--primary);
 `;
 
-export const Name = styled.h2`  
+export const Login = styled.h2`  
   color: var(--secondary);
 `;
 
