@@ -13,6 +13,18 @@ export default createGlobalStyle`
     color: var(--white);
   }
   
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: var(--input);
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: var(--primary);
+  }
+  
   *, button, input {
     border: 0;
     outline: 0;
@@ -26,7 +38,7 @@ export default createGlobalStyle`
   }
   
   :root {
-    --primary: #00c2ff;
+    --primary: #b20000;
     --secondary: #bbbaba;
     --tertiary: #3d3d3b;
     

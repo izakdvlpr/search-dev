@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`    
-  margin: 14rem auto;
+  margin: 12rem auto;
   
   display: flex;
   flex-direction: column;
@@ -37,6 +37,7 @@ export const Input = styled.input`
     
   border-radius: 10px;
   
+  font-size: 1.1em;
   color: var(--white);  
     
   background-color: var(--input);    
@@ -51,8 +52,9 @@ export const Button = styled.input`
   
   border-radius: 10px;
       
-  font-size: 14px;
+  font-size: 1.1em;
   font-weight: bold;
+  
   cursor: pointer;
     
   background-color: var(--primary);    

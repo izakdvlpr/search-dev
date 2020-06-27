@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Layout from "@layout";
 
@@ -9,32 +9,33 @@ import UserRepositories from '@components/UserRepositories';
 import { Container, Header, Title,  Button, Profile } from './styles';
 
 import api from '@services/github';
+
 import IUserInfo from '@interfaces/UserInfo';
 import IUserRepositories from '@interfaces/UserRepositories';
 
-const User: React.FC = () => {
-  const [userInfo, setUI] = useState<IUserInfo>();
-  const [userRepositories, setUR] = useState<IUserRepositories[]>();
+const User: React.FC = () => {           
+  const [user, setUser] = useState<IUserInfo>();
+  const [repositories, setRepositories] = useState<IUserRepositories[]>();            
   
-  const router = useRouter();
+  const router = useRouter();  
   
-  useEffect(() => {
-    async function getUR() {
-      return await api.get<IUserRepositories[]>(`/users/${router.query.name}/repos`).then(response => {
-        setUR(response.data);
-      });
-    }
+  async function getRpositories() {
+    const response = await api.get<IUserRepositories[]>(`/users/${router.query.name}/repos`);
     
-    async function getUI()  {            
-      return await api.get<IUserInfo>(`/users/${router.query.name}`).then(response => {
-        if (response) {
-          setUI(response.data);
-          getUR();
-        }
-      });            
-    }    
-    
-    getUI();
+    setRepositories(response.data);    
+  }
+  
+  async function getUser() {
+    await api.get<IUserInfo>(`/users/${router.query.name}`).then(response => {
+      setUser(response.data);          
+      getRpositories(); 
+    }).catch(err => console.error(err));        
+  }
+  
+  console.log(user)
+  
+  useEffect(() => {    
+    getUser();
   }, [router.query.name]);  
   
   return (
@@ -43,22 +44,23 @@ const User: React.FC = () => {
         <Header>          
           <Title>Busca<span>Dev</span></Title>
           <Link href="/"><a><Button>Início</Button></a></Link>          
-        </Header>                    
+        </Header>
         
-        {userInfo ? (
+        {user ? (
           <Profile>            
             <UserInfo
-              key={userInfo.id}
-              avatar_url={userInfo.avatar_url}
-              name={userInfo.name}
-              login={userInfo.login}
-              bio={userInfo.bio}
-              following={userInfo.following}
-              followers={userInfo.followers}
+              key={user.id}
+              avatar_url={user.avatar_url}
+              name={user.name}
+              login={user.login}
+              bio={user.bio}
+              following={user.following}
+              followers={user.followers}
             />
-            {userRepositories?.length > 0 ? (
-              <div>
-                {userRepositories?.map(repo => (                  
+            {/* @ts-ignore */}
+            {repositories?.length > 0 ? (
+              <div>                
+                {repositories?.map(repo => (                  
                   <UserRepositories
                     key={repo.id}
                     stargazers_count={repo.stargazers_count}
@@ -69,20 +71,12 @@ const User: React.FC = () => {
                 ))}
               </div>
             ) : (
-              <div style={{
-                width: "35em",
-                height: "7em",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-around",
-                alignItems: "center",
-                textAlign: "center"
-              }}>Sem repositórios por aqui ;c</div>
+              <div style={{ width: "35em", height: "7em", textAlign: "center" }}><h3 style={{ color: "var(--secondary)" }}>Sem repositórios por aqui ;c</h3></div>
             )}
           </Profile>
         ) : (
-          <h1>user n enconrdao</h1>
-        )}
+          <div style={{ width: "35em", height: "7em", textAlign: "center" }}>Nehum Dev encontrado :c</div>
+        )}                                
       </Container>
     </Layout>
   )

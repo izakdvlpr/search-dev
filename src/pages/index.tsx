@@ -1,24 +1,18 @@
 import React, { useState } from "react";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import Layout from "@layout";
 
 import { Container, Title, Form, Input, Button } from '../styles/pages';
-
-import api from '../services/github';
-import IUserInfo from '../interfaces/UserInfo'
 
 const Index: React.FC = () => {    
   const [username, setUsername] = useState('');
   
   const router = useRouter();
   
-  const handleSubmit = async (e: React.BaseSyntheticEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (event: React.BaseSyntheticEvent) => {
+    event.preventDefault();             
     
-    const response = await api.get<IUserInfo>(`/users/${username}`);
-    const { login } = response.data;
-    
-    return router.push(`/user/${login}`);    
+    router.push(`/user/${username}`);    
   }
   
   return (
@@ -29,7 +23,7 @@ const Index: React.FC = () => {
           <Input            
             placeholder="Usuário do Github"
             value={username}
-            onChange={(e: any) => setUsername(e.target.value)}
+            onChange={event => setUsername(event.target.value)}
           />
           <Button
             type="submit"
