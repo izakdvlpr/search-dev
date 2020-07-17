@@ -17,8 +17,7 @@ const User = () => {
   const [user, setUser] = useState<IUserInfo>();
   const [repositories, setRepositories] = useState<IUserRepositories[]>();            
   
-  const router = useRouter();      
-  
+  const router = useRouter();          
   
   useEffect(() => {    
     GithubAPI.getUser(router.query.name).then(r => setUser(r.data));        
