@@ -20,5 +20,6 @@ module.exports = composePlugins(
     experimental: {
       jsconfigPaths: true,
     },
+    handleImages: ['jpeg', 'png', 'svg', 'webp', 'gif']
   }
 );
