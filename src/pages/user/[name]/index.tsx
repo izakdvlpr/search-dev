@@ -8,34 +8,21 @@ import UserRepositories from '@components/UserRepositories';
 
 import { Container, Header, Title,  Button, Profile } from './styles';
 
-import api from '@services/github';
+import GithubAPI from "@api/Github";
 
 import IUserInfo from '@interfaces/UserInfo';
 import IUserRepositories from '@interfaces/UserRepositories';
 
-const User: React.FC = () => {           
+const User = () => {           
   const [user, setUser] = useState<IUserInfo>();
   const [repositories, setRepositories] = useState<IUserRepositories[]>();            
   
-  const router = useRouter();  
+  const router = useRouter();      
   
-  async function getRpositories() {
-    const response = await api.get<IUserRepositories[]>(`/users/${router.query.name}/repos`);
-    
-    setRepositories(response.data);    
-  }
-  
-  async function getUser() {
-    await api.get<IUserInfo>(`/users/${router.query.name}`).then(response => {
-      setUser(response.data);          
-      getRpositories(); 
-    }).catch(err => console.error(err));        
-  }
-  
-  console.log(user)
   
   useEffect(() => {    
-    getUser();
+    GithubAPI.getUser(router.query.name).then(r => setUser(r.data));        
+    GithubAPI.getRepositories(router.query.name).then(r => setRepositories(r.data));
   }, [router.query.name]);  
   
   return (

@@ -1,38 +1,37 @@
 import React, { useState } from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import Layout from "@layout";
 
-import { Container, Title, Form, Input, Button } from '../styles/pages';
+import { Container, Title, Form, Input, Button } from "../styles/pages";
 
-const Index: React.FC = () => {    
-  const [username, setUsername] = useState('');
-  
+const Index: React.FC = () => {
+  const [username, setUsername] = useState("");
+
   const router = useRouter();
-  
+
   const handleSubmit = async (event: React.BaseSyntheticEvent) => {
-    event.preventDefault();             
-    
-    router.push(`/user/${username}`);    
-  }
-  
+    event.preventDefault();
+
+    router.push(`/user/${username}`);
+  };
+
   return (
-    <Layout>      
+    <Layout>
       <Container>
-        <Title>Busca<span>Dev</span></Title>
+        <Title>
+          Busca<span>Dev</span>
+        </Title>
         <Form onSubmit={handleSubmit}>
-          <Input            
+          <Input
             placeholder="Usuário do Github"
             value={username}
-            onChange={event => setUsername(event.target.value)}
+            onChange={(event) => setUsername(event.target.value)}
           />
-          <Button
-            type="submit"
-            value="Buscar"
-          />
+          <Button type="submit" value="Buscar" />
         </Form>
       </Container>
     </Layout>
-  )
-}
+  );
+};
 
 export default Index;

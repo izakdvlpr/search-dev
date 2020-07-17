@@ -19,6 +19,7 @@
     "target": "esnext",
     "baseUrl": "./src",
     "paths": {
+      "@api/*": ["api/*"],
       "@components/*": ["components/*"],
       "@interfaces/*": ["interfaces/*"],
       "@layout": ["layout"],
@@ -26,12 +27,6 @@
       "@styles/*": ["styles/pages/*"]
     }
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

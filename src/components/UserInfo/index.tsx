@@ -1,5 +1,5 @@
-import React, { memo } from 'react';
- 
+import React, { memo } from "react";
+
 import {
   Container,
   Avatar,
@@ -8,23 +8,34 @@ import {
   Bio,
   Statistics,
   Following,
-  Followers
-} from './styles';
+  Followers,
+} from "./styles";
 
-import IUserInfo from '@interfaces/UserInfo';
+import IUserInfo from "@interfaces/UserInfo";
 
-const UserInfo: React.FC<IUserInfo> = ({ avatar_url, name, login, bio, following, followers }) => (
+const UserInfo: React.FC<IUserInfo> = ({
+  avatar_url,
+  name,
+  login,
+  bio,
+  following,
+  followers,
+}) => (
   <Container>
-    <Avatar src={avatar_url} alt="Avatar"/>
+    <Avatar src={avatar_url} alt="Avatar" />
     <Name>{name}</Name>
     <Login>@{login}</Login>
     <Bio>{bio}</Bio>
     <Statistics>
-      <Following>          
-        <p><strong>{Number(following).toLocaleString()}</strong> seguindo</p>
+      <Following>
+        <p>
+          <strong>{Number(following).toLocaleString()}</strong> seguindo
+        </p>
       </Following>
-      <Followers>          
-        <p><strong>{Number(followers).toLocaleString()}</strong> seguidores</p>
+      <Followers>
+        <p>
+          <strong>{Number(followers).toLocaleString()}</strong> seguidores
+        </p>
       </Followers>
     </Statistics>
   </Container>

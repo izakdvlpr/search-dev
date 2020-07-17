@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ export const Header = styled.header`
   align-items: center;
   margin-top: 40px;
   justify-content: space-around;
-  
+
   @media (max-width: 474px) {
     flex-direction: column;
   }
@@ -20,41 +20,39 @@ export const Header = styled.header`
 export const Title = styled.h1`
   font-size: 3em;
   color: var(--primary);
-  
+
   margin-bottom: 30px;
-  
+
   > span {
     color: var(--secondary);
   }
 `;
 
-
 export const Button = styled.button`
   width: 15em;
   height: 3.4em;
-  
-  border-radius: .5em;      
-  
+
+  border-radius: 0.5em;
+
   font-size: 16px;
   font-weight: 700;
   color: #000;
-    
-  cursor: pointer;  
-  
+
+  cursor: pointer;
+
   background-color: var(--primary);
-  
+
   &:hover {
     opacity: 0.9;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
   }
 `;
 
-
 export const Profile = styled.div`
   margin-top: 2em;
-  
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;        
+  justify-content: center;
 `;

@@ -1,22 +1,28 @@
-import styled from 'styled-components';
-import { MdKeyboardArrowRight } from 'react-icons/md';
+import styled from "styled-components";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
-export const Repository = styled.div`    
+export const Repository = styled.div`
   width: 35em;
   height: 7em;
-  
+
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  text-align: center;   
-  
+  text-align: center;
+
   padding: 2px;
-  margin-bottom: 25px;  
-  
-  border-radius: 15px;     
-  
+  margin-bottom: 25px;
+
+  border-radius: 15px;
+
   background-color: #3d3d3d;
+  
+  @media (max-width: 589px) {
+    width: 20em;
+    height: 14em;
+    flex-direction: column;
+  }
 `;
 
 export const Stars = styled.div`
@@ -24,7 +30,7 @@ export const Stars = styled.div`
     font-size: 2em;
     color: var(--primary);
   }
-  
+
   > p {
     font-weight: bold;
     color: var(--secondary);
@@ -32,16 +38,16 @@ export const Stars = styled.div`
 `;
 
 export const Information = styled.div`
-  text-align: left;  
+  text-align: left;
   width: 250px;
-  
+
   > h2 {
     color: var(--primary);
   }
-  
+
   > p {
     margin-top: 5px;
-    
+
     font-size: 14px;
     color: var(--secondary);
   }

@@ -14,7 +14,7 @@
 
 ## :page_with_curl: Sobre
 
-...
+O intuito do Busca Dev
 
 ## :computer: Tecnologias
 
