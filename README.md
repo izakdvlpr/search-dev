@@ -7,18 +7,41 @@
     <a href="#recycle-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#customs-license">Licença</a>
   </p>
-  <a href="https://github.com/zevdvlpr/coronApp/tree/master/LICENSE">
+  <a href="https://github.com/zevdvlpr/busca-dev/tree/master/LICENSE">
     <img src="https://img.shields.io/github/license/zevdvlpr/busca-dev?color=%23000000&label=License&style=flat-square" alt="License">
   </a>
 </div>
 
 ## :page_with_curl: Sobre
 
-O intuito do Busca Dev
+...
 
 ## :computer: Tecnologias
 
-...
+### Front-end
+
+- [React.js](https://pt-br.reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [Hooks](https://pt-br.reactjs.org/docs/hooks-intro.html)
+- [JSX](https://pt-br.reactjs.org/docs/introducing-jsx.html)
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [TypeScript](https://www.typescriptlang.org)
+
+**Dependências**
+
+- [axios](https://github.com/axios/axios)
+- [next](https://github.com/vercel/next.js)
+- [react](https://github.com/facebook/react)
+- [styled-components](https://github.com/styled-components/styled-components)
+
+**Dependências de desenvolvimento**
+
+- [@next/bundle-analyzer](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)
+- [@zeit/next-source-maps](https://github.com/vercel/next-plugins/tree/master/packages/next-source-maps)
+- [babel-plugin-styled-components](https://github.com/styled-components/babel-plugin-styled-components)
+- [next-compose-plugins](https://github.com/cyrilwanner/next-compose-plugins)
+- [rimraf](https://github.com/isaacs/rimraf)
+- [typescript](https://github.com/microsoft/TypeScript)
 
 ## :recycle: Como Contribuir
 
