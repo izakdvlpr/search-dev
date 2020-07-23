@@ -18,8 +18,6 @@
 
 ## :computer: Tecnologias
 
-### Front-end
-
 - [React.js](https://pt-br.reactjs.org/)
 - [Next.js](https://nextjs.org/)
 - [Hooks](https://pt-br.reactjs.org/docs/hooks-intro.html)
